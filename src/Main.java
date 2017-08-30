@@ -34,16 +34,18 @@ public class Main {
         }
 
         Gauss gauss = new Gauss(matriz);
-
-
+        GaussJordan gaussJ = new GaussJordan(matriz);
 
 
         gauss.calcularIncognitas();
-        ArrayList<Double> respuestas = gauss.getIncognitas();
+        gaussJ.calcularIncognitas();
+        ArrayList<Double> respuestasG = gauss.getIncognitas();
+        ArrayList<Double> respuestasGJ = gaussJ.getIncognitas();
 
         System.out.println("Su respuesta con Eliminacion gaussiana es: ");
-        System.out.println(respuestas);
-
+        System.out.println(respuestasG);
+        System.out.println("Su respuesta con Gauss-Jordan es: ");
+        System.out.println(respuestasGJ);
 
 
 

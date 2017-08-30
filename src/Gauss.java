@@ -33,14 +33,19 @@ public class Gauss {
             }
 
         }
-        for(int i = n; i < n; i++){
-            double suma = 0;
-            for(int j = i+1; j<n; j++){
-                suma = suma + matriz.get(i).get(j)*incognitas.get(j);
+        double suma = 0;
+        double[] x = new double[n];
+        for(int i=n-1;i>=0;i--){
+            suma=0;
+            for(int j=i+1;j<n;j++){
+                suma = suma + matriz.get(i).get(j)*x[j];
             }
-            double numerazo = (matriz.get(i).get(n) - suma  )/ matriz.get(i).get(i);
-            incognitas.set(i, numerazo);
+            x[i] = (matriz.get(i).get(n) - suma)/matriz.get(i).get(i);
         }
+        for(double incog: x){
+            incognitas.add(incog);
+        }
+
     }
 
     public ArrayList<Double> getIncognitas() {

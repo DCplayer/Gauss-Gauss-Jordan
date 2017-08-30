@@ -36,12 +36,12 @@ public class Main {
         Gauss gauss = new Gauss(matriz);
 
 
-        System.out.println(matriz);
-        System.out.println("-------------------------");
-        System.out.println(resultadosFilas);
+
 
         gauss.calcularIncognitas();
         ArrayList<Double> respuestas = gauss.getIncognitas();
+
+        System.out.println("Su respuesta con Eliminacion gaussiana es: ");
         System.out.println(respuestas);
 
 
